@@ -1,0 +1,45 @@
+/* JANG'S TASTE SENSATION — spacing, radii, shadows, motion, blur */
+
+:root {
+  /* Spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 140px;
+
+  /* Radii — mostly sharp; the one signature curve echoes the reference
+     mark's single rounded corner (top-right) */
+  --radius-none: 0px;
+  --radius-sm: 2px;
+  --radius-signature: 28px; /* apply to top-right corner only */
+  --radius-pill: 999px;
+
+  /* Shadows — deep, soft, cinematic */
+  --shadow-card: 0 24px 60px rgba(0, 0, 0, 0.55);
+  --shadow-float: 0 40px 120px rgba(0, 0, 0, 0.7);
+  --shadow-glow-fog: 0 0 80px rgba(204, 188, 163, 0.18);
+
+  /* Motion — slow, weighty, no bounce */
+  --ease-cinematic: cubic-bezier(0.22, 1, 0.36, 1); /* @kind other */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1); /* @kind other */
+  --duration-fast: 200ms; /* @kind other */
+  --duration-base: 450ms; /* @kind other */
+  --duration-slow: 900ms; /* @kind other */
+
+  /* Blur */
+  --blur-glass: 18px;
+
+  /* Layout */
+  --container-max: 1320px;
+  --gutter: clamp(20px, 4vw, 64px); /* @kind spacing */
+
+  /* 3D depth (for tilt/parallax components) */
+  --depth-perspective: 1200px;
+  --depth-lift: 40px;
+}

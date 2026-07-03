@@ -1,0 +1,50 @@
+<!-- @dsCard group="Components" viewport="700x400" name="Core" subtitle="Wordmark · Button · IconButton · Badge · Tag · Divider · SectionHeading" -->
+<!DOCTYPE html>
+<html><head>
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body { padding: 24px 28px; }</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { Wordmark, Button, IconButton, Badge, Tag, Divider, SectionHeading } = window.JangSTasteSensationDesignSystem_4dc13a;
+const Arrow = () => <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>;
+const Fire = () => <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>;
+function Demo() {
+  const [tag, setTag] = React.useState("All");
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 22 }}>
+      <div style={{ display: "flex", gap: 12, alignItems: "center", flexWrap: "wrap" }}>
+        <Button size="sm">Reserve</Button>
+        <Button variant="accent" size="sm" icon={<Arrow />}>Book now</Button>
+        <Button variant="outline" size="sm">View menu</Button>
+        <Button variant="ghost" size="sm">Contact</Button>
+        <Button size="sm" disabled>Sold out</Button>
+        <IconButton size="sm" label="Signature"><Fire /></IconButton>
+        <IconButton size="sm" active label="Active"><Fire /></IconButton>
+      </div>
+      <div style={{ display: "flex", gap: 10, alignItems: "center", flexWrap: "wrap" }}>
+        <Badge>Tonight</Badge>
+        <Badge tone="water">Chef's pick</Badge>
+        <Badge tone="neutral">Seasonal</Badge>
+        <Badge tone="solid">Sold out</Badge>
+        <span style={{ width: 14 }}></span>
+        {["All", "Raw", "Fire", "Ferment"].map((t) => (
+          <Tag key={t} selected={tag === t} onClick={() => setTag(t)}>{t}</Tag>
+        ))}
+      </div>
+      <Divider label="The Counter" accent></Divider>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr auto", alignItems: "center", gap: 24 }}>
+        <SectionHeading align="left" size="title" kicker="Omakase" title="Twelve Seats. One Fire." subtitle="A single tasting course, served the moment it is ready."></SectionHeading>
+        <Wordmark size="md"></Wordmark>
+      </div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<Demo />);
+</script>
+</body></html>

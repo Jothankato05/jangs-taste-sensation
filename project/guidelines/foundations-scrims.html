@@ -1,0 +1,15 @@
+<!-- @dsCard group="Foundations" viewport="700x170" name="Scrims & Glass" subtitle="Protection gradients over imagery; glass for nav and dialogs" -->
+<!DOCTYPE html>
+<html><head><link rel="stylesheet" href="../styles.css">
+<style>
+  body { padding: 20px 28px; background: var(--surface-page); display: flex; gap: 20px; }
+  .frame { position: relative; flex: 1; height: 120px; overflow: hidden; border-radius: 2px 20px 2px 2px; border: 1px solid var(--border-subtle);
+    background: radial-gradient(120% 90% at 70% 20%, #3b4a5a 0%, #16202b 55%, #050505 100%); }
+  .scrim { position: absolute; inset: 0; background: var(--scrim-bottom); }
+  .cap { position: absolute; left: 14px; bottom: 12px; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; }
+  .glass { position: absolute; left: 12px; right: 12px; top: 12px; padding: 8px 12px; background: var(--surface-glass); backdrop-filter: blur(18px); border: 1px solid var(--border-subtle); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-secondary); }
+</style></head>
+<body>
+  <div class="frame"><div class="scrim"></div><div class="cap">scrim-bottom</div></div>
+  <div class="frame"><div class="glass">glass nav · blur 18</div><div class="cap" style="color:var(--text-tertiary)">surface-glass</div></div>
+</body></html>

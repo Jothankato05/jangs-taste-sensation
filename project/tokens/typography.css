@@ -1,0 +1,36 @@
+/* JANG'S TASTE SENSATION — typography tokens
+   One family (Montserrat), differentiated by weight, case and tracking.
+   Display = bold uppercase, tight leading. Kicker = wide-tracked caps. */
+
+:root {
+  --font-sans: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+
+  /* Sizes */
+  --text-hero: clamp(44px, 6.5vw, 96px);
+  --text-display: clamp(32px, 4vw, 56px);
+  --text-title: 28px;
+  --text-heading: 20px;
+  --text-body: 16px;
+  --text-small: 14px;
+  --text-caption: 12px;
+  --text-micro: 11px;
+
+  /* Weights */
+  --weight-light: 300;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-black: 800;
+
+  /* Tracking — the brand's signature is wide-spaced caps */
+  --tracking-display: 0.01em;
+  --tracking-caps: 0.22em;
+  --tracking-kicker: 0.42em;
+  --tracking-body: 0.01em;
+
+  /* Leading */
+  --leading-display: 1.04;
+  --leading-tight: 1.2;
+  --leading-body: 1.65;
+}

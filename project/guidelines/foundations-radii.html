@@ -1,0 +1,12 @@
+<!-- @dsCard group="Foundations" viewport="700x180" name="Signature Corner & Shadows" subtitle="Sharp everywhere except one 28px top-right curve" -->
+<!DOCTYPE html>
+<html><head><link rel="stylesheet" href="../styles.css">
+<style>
+  body { padding: 24px 28px; background: var(--ink-900); display: flex; gap: 20px; align-items: center; }
+  .box { width: 190px; height: 120px; background: var(--ink-700); border: 1px solid var(--border-subtle); display: flex; align-items: flex-end; padding: 12px 14px; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-secondary); }
+</style></head>
+<body>
+  <div class="box" style="border-radius:2px">radius-sm 2px</div>
+  <div class="box" style="border-radius:2px 28px 2px 2px">signature 28px ↗</div>
+  <div class="box" style="border-radius:2px 28px 2px 2px; box-shadow: var(--shadow-card); background: var(--ink-800)">shadow-card</div>
+</body></html>

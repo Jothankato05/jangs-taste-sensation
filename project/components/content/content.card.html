@@ -1,0 +1,37 @@
+<!-- @dsCard group="Components" viewport="700x560" name="Content" subtitle="TiltCard (3D) · DishCard · NavBar · Footer" -->
+<!DOCTYPE html>
+<html><head>
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { TiltCard, DishCard, NavBar, Footer } = window.JangSTasteSensationDesignSystem_4dc13a;
+function Demo() {
+  const [active, setActive] = React.useState("Menu");
+  return (
+    <div>
+      <NavBar links={["Menu", "Chef", "Visit"]} active={active} onNavigate={setActive}></NavBar>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 22, padding: "26px 30px 34px" }}>
+        <TiltCard>
+          <div style={{ padding: 18 }}>
+            <DishCard name="Charred Octopus" description="gochujang glaze, smoked leek" price="32" badge="Signature" atmosphere="warm"></DishCard>
+          </div>
+        </TiltCard>
+        <DishCard name="Stone Bass" description="dashi beurre blanc, sea herbs" price="38" atmosphere="cool"></DishCard>
+        <DishCard name="Smoked Short Rib" description="black garlic, charred allium" price="44" atmosphere="smoke"></DishCard>
+      </div>
+      <Footer note="Twelve seats. One counter. One fire." columns={[
+        { title: "Visit", links: ["Menu", "Reserve", "Private dining"] },
+        { title: "Contact", links: ["Email", "Instagram"] },
+      ]}></Footer>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<Demo />);
+</script>
+</body></html>

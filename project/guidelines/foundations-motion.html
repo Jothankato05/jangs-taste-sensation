@@ -1,0 +1,17 @@
+<!-- @dsCard group="Foundations" viewport="700x160" name="Motion" subtitle="Slow, weighty, no bounce — hover to run" -->
+<!DOCTYPE html>
+<html><head><link rel="stylesheet" href="../styles.css">
+<style>
+  body { padding: 20px 28px; background: var(--surface-page); display: flex; gap: 20px; align-items: center; }
+  .demo { flex: 1; height: 110px; background: var(--surface-card); border: 1px solid var(--border-subtle); border-radius: 2px 20px 2px 2px; overflow: hidden; position: relative; cursor: pointer; }
+  .demo .cap { position: absolute; left: 14px; bottom: 10px; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-secondary); z-index: 2; }
+  .fill { position: absolute; inset: 0; background: radial-gradient(100% 100% at 50% 120%, #4a4234 0%, transparent 70%); opacity: 0; transform: translateY(14px); transition: all 900ms cubic-bezier(0.22,1,0.36,1); }
+  .demo:hover .fill { opacity: 1; transform: none; }
+  .tile { position: absolute; inset: 0; display: grid; place-items: center; }
+  .tile span { font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; transition: transform 450ms cubic-bezier(0.22,1,0.36,1), color 450ms; }
+  .demo:hover .tile span { transform: translateY(-6px); color: var(--text-accent); }
+</style></head>
+<body>
+  <div class="demo"><div class="fill"></div><div class="tile"><span>ease-cinematic</span></div><div class="cap">900ms fade + rise</div></div>
+  <div class="demo"><div class="tile"><span>hover lift</span></div><div class="cap">450ms translate</div></div>
+</body></html>
