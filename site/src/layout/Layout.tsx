@@ -37,7 +37,13 @@ export function Layout() {
         note="African and intercontinental dishes, from Chef Jang's kitchen."
         columns={[
           { title: "Visit", links: ["Menu", "Reserve", "Private Dining"] },
-          { title: "Contact", links: ["Email", "Instagram"] },
+          {
+            title: "Contact",
+            links: [
+              { label: "Email", href: "mailto:Jangstastesensation@gmail.com" },
+              { label: "Instagram", href: "https://instagram.com/Jangs_taste_sensation" },
+            ],
+          },
         ]}
       />
     </div>

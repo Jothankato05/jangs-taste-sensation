@@ -2,9 +2,14 @@ import type { CSSProperties } from "react";
 import { Logo } from "../core/Logo";
 import { Divider } from "../core/Divider";
 
+interface FooterLink {
+  label: string;
+  href?: string;
+}
+
 interface FooterColumn {
   title: string;
-  links: string[];
+  links: (string | FooterLink)[];
 }
 
 interface FooterProps {
@@ -26,11 +31,22 @@ export function Footer({ columns = [], note, style }: FooterProps) {
           {columns.map((col) => (
             <div key={col.title} style={{ display: "flex", flexDirection: "column", gap: 12 }}>
               <span style={{ fontSize: 10, fontWeight: "var(--weight-semibold)", letterSpacing: "0.32em", textTransform: "uppercase", color: "var(--text-accent)" }}>{col.title}</span>
-              {col.links.map((l) => (
-                <a key={l} href="#" onClick={(e) => e.preventDefault()} style={{ fontSize: 13, fontWeight: "var(--weight-light)", color: "var(--text-secondary)", textDecoration: "none", letterSpacing: "0.06em" }}>
-                  {l}
-                </a>
-              ))}
+              {col.links.map((l) => {
+                const link = typeof l === "string" ? { label: l } : l;
+                const external = link.href?.startsWith("http") ?? false;
+                return (
+                  <a
+                    key={link.label}
+                    href={link.href ?? "#"}
+                    onClick={link.href ? undefined : (e) => e.preventDefault()}
+                    target={external ? "_blank" : undefined}
+                    rel={external ? "noopener noreferrer" : undefined}
+                    style={{ fontSize: 13, fontWeight: "var(--weight-light)", color: "var(--text-secondary)", textDecoration: "none", letterSpacing: "0.06em" }}
+                  >
+                    {link.label}
+                  </a>
+                );
+              })}
             </div>
           ))}
         </div>
