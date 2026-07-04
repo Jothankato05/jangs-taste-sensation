@@ -1,5 +1,5 @@
 import type { CSSProperties } from "react";
-import { Wordmark } from "../core/Wordmark";
+import { Logo } from "../core/Logo";
 import { Button } from "../core/Button";
 
 interface NavBarProps {
@@ -35,7 +35,7 @@ export function NavBar({ links = [], active, onNavigate, cta = "Reserve", onCta,
         ...style,
       }}
     >
-      <Wordmark size="sm" tagline={false}></Wordmark>
+      <Logo size="sm" />
       <div style={{ display: "flex", gap: 38 }}>
         {links.map((l) => (
           <a

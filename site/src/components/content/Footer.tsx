@@ -1,5 +1,5 @@
 import type { CSSProperties } from "react";
-import { Wordmark } from "../core/Wordmark";
+import { Logo } from "../core/Logo";
 import { Divider } from "../core/Divider";
 
 interface FooterColumn {
@@ -19,7 +19,7 @@ export function Footer({ columns = [], note, style }: FooterProps) {
     <footer style={{ background: "var(--ink-950)", padding: "72px var(--gutter) 40px", fontFamily: "var(--font-sans)", ...style }}>
       <div style={{ display: "flex", justifyContent: "space-between", gap: 48, flexWrap: "wrap", marginBottom: 56 }}>
         <div style={{ display: "flex", flexDirection: "column", gap: 18, maxWidth: 300 }}>
-          <Wordmark size="md" style={{ textAlign: "left", alignItems: "flex-start" }}></Wordmark>
+          <Logo size="md" />
           {note && <p style={{ margin: 0, fontSize: 13, fontWeight: "var(--weight-light)", color: "var(--text-tertiary)", lineHeight: 1.6 }}>{note}</p>}
         </div>
         <div style={{ display: "flex", gap: 72, flexWrap: "wrap" }}>
