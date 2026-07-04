@@ -1,0 +1,19 @@
+/* JANG'S TASTE SENSATION — webfonts
+   Montserrat variable (nearest Google Fonts match to the geometric
+   grotesque used in the Mirage reference — flagged as a substitution). */
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/Montserrat[wght].ttf") format("truetype-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/Montserrat-Italic[wght].ttf") format("truetype-variations");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}

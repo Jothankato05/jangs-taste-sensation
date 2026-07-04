@@ -1,0 +1,64 @@
+/* JANG'S TASTE SENSATION — color tokens
+   Palette lifted verbatim from the Mirage reference palette card:
+   White / Black / Morning Fog #CCBCA3 / Lake Water #AEC4DC. */
+
+:root {
+  /* Base palette */
+  --white: #ffffff;
+  --black: #000000;
+  --morning-fog: #ccbca3;
+  --lake-water: #aec4dc;
+
+  /* Ink scale (cinematic darks — screens live near-black, not pure) */
+  --ink-950: #050505;
+  --ink-900: #0a0a0b;
+  --ink-800: #121214;
+  --ink-700: #1a1a1d;
+  --ink-600: #26262a;
+
+  /* Fog scale (warm neutral tints of Morning Fog) */
+  --fog-100: #f2ede3;
+  --fog-200: #e4dcca;
+  --fog-300: #ccbca3;
+  --fog-400: #b3a186;
+  --fog-500: #8f7f66;
+
+  /* Water scale (cool tints of Lake Water) */
+  --water-100: #e6eef7;
+  --water-200: #cdddec;
+  --water-300: #aec4dc;
+  --water-400: #8aa7c4;
+  --water-500: #67879f;
+
+  /* Text on dark */
+  --text-primary: rgba(255, 255, 255, 0.96);
+  --text-secondary: rgba(255, 255, 255, 0.64);
+  --text-tertiary: rgba(255, 255, 255, 0.4);
+  --text-accent: var(--morning-fog);
+  /* Text on light */
+  --text-on-light: #0a0a0b;
+  --text-on-light-secondary: rgba(10, 10, 11, 0.6);
+
+  /* Surfaces */
+  --surface-page: var(--ink-950);
+  --surface-raised: var(--ink-900);
+  --surface-card: rgba(255, 255, 255, 0.04);
+  --surface-card-hover: rgba(255, 255, 255, 0.07);
+  --surface-glass: rgba(10, 10, 11, 0.55);
+  --surface-light: var(--fog-100);
+
+  /* Lines */
+  --border-subtle: rgba(255, 255, 255, 0.12);
+  --border-strong: rgba(255, 255, 255, 0.28);
+  --border-on-light: rgba(10, 10, 11, 0.16);
+
+  /* Interactive */
+  --action-primary-bg: var(--white);
+  --action-primary-fg: var(--black);
+  --action-accent: var(--morning-fog);
+  --focus-ring: var(--lake-water);
+
+  /* Protection gradients over imagery */
+  --scrim-bottom: linear-gradient(to top, rgba(5, 5, 5, 0.88) 0%, rgba(5, 5, 5, 0.35) 45%, rgba(5, 5, 5, 0) 100%); /* @kind other */
+  --scrim-full: linear-gradient(to top, rgba(5, 5, 5, 0.92) 0%, rgba(5, 5, 5, 0.45) 100%); /* @kind other */
+}
