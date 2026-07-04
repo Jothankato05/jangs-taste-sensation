@@ -4,6 +4,7 @@ export interface Dish {
   name: string;
   description?: string;
   price?: string;
+  image?: string;
   atmosphere: "warm" | "cool" | "smoke";
   badge?: string;
   category: Category;
@@ -11,12 +12,20 @@ export interface Dish {
 
 const atmospheres: Dish["atmosphere"][] = ["warm", "cool", "smoke"];
 
+// Stock photos for the signature dishes, sourced from Pexels (free for commercial use, no attribution required).
+const signatureImages: Record<string, string> = {
+  "Singapore Noodles": "https://images.pexels.com/photos/2347311/pexels-photo-2347311.jpeg",
+  "Butter Chicken": "https://images.pexels.com/photos/29685054/pexels-photo-29685054.jpeg",
+  "Chef Jang Special (Potato & Chicken)": "https://images.pexels.com/photos/12077982/pexels-photo-12077982.jpeg",
+};
+
 function build(category: Category, names: string[], signature: string[] = []): Dish[] {
   return names.map((name, i) => ({
     name,
     category,
     atmosphere: atmospheres[i % atmospheres.length],
     badge: signature.includes(name) ? "Signature" : undefined,
+    image: signatureImages[name],
   }));
 }
 
