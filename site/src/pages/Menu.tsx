@@ -20,7 +20,7 @@ export function Menu() {
           background: menuHeroAtmosphere,
         }}
       >
-        <SectionHeading kicker="Jang's Taste Sensation" title="The Menu" subtitle="Dishes built around fire, smoke and ash — served as the season allows." />
+        <SectionHeading kicker="Jang's Taste Sensation" title="The Menu" subtitle="African and intercontinental dishes, from Chef Jang's kitchen." />
       </section>
 
       <section style={{ maxWidth: "var(--container-max)", margin: "0 auto", padding: "var(--space-7) var(--gutter) var(--space-9)" }}>

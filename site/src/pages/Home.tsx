@@ -9,7 +9,6 @@ import { DishCard } from "../components/content/DishCard";
 import { dishes } from "../data/menu";
 
 const heroAtmosphere = "radial-gradient(140% 100% at 50% 20%, #2a2015 0%, #14100b 45%, #050505 100%)";
-const chefAtmosphere = "radial-gradient(120% 100% at 30% 20%, #3a2c1c 0%, #1a1510 55%, #050505 100%)";
 
 const signatureDishes = dishes.filter((d) => d.badge === "Signature").slice(0, 3);
 
@@ -51,7 +50,7 @@ export function Home() {
             textAlign: "center",
           }}
         >
-          <SectionHeading kicker="Jang's Taste Sensation" title="Seared. Served." size="hero" subtitle="Your table is waiting. Twelve seats. One fire." />
+          <SectionHeading kicker="Jang's Taste Sensation" title="Seared. Served." size="hero" subtitle="Your table is waiting." />
           <div style={{ display: "flex", gap: 16, marginTop: 8, flexWrap: "wrap", justifyContent: "center" }}>
             <Button size="lg" variant="primary" onClick={() => navigate("/reserve")}>
               Reserve a Table
@@ -65,7 +64,7 @@ export function Home() {
 
       {/* Signature dishes */}
       <section style={{ maxWidth: "var(--container-max)", margin: "0 auto", padding: "var(--space-9) var(--gutter)" }}>
-        <SectionHeading kicker="The Menu" title="Signature Dishes" subtitle="Ingredient-led plates, built around fire, smoke and ash." />
+        <SectionHeading kicker="The Menu" title="Signature Dishes" subtitle="African and intercontinental favorites, from Chef Jang's own kitchen." />
         <div
           style={{
             display: "grid",
@@ -107,15 +106,16 @@ export function Home() {
           }}
         >
           <TiltCard>
-            <div style={{ aspectRatio: "4 / 5", background: chefAtmosphere, position: "relative" }}>
+            <div style={{ aspectRatio: "4 / 5", position: "relative" }}>
+              <img src="/images/chef-jang.jpg" alt="Chef Jang Victor Chundusu" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 20%" }} />
               <div style={{ position: "absolute", inset: 0, background: "var(--scrim-bottom)" }} />
               <div style={{ position: "absolute", bottom: 20, left: 20 }}>
-                <Badge tone="fog">Est. 2014</Badge>
+                <Badge tone="fog">Chef &amp; Owner</Badge>
               </div>
             </div>
           </TiltCard>
           <div style={{ display: "flex", flexDirection: "column", gap: 22, alignItems: "flex-start" }}>
-            <SectionHeading align="left" kicker="The Chef" title="Fire Is The Ingredient" subtitle="Chef Jang trained on open flame before anything else. Twelve years later, the fire still leads every plate." />
+            <SectionHeading align="left" kicker="The Chef" title="Jang Victor Chundusu" subtitle="From Barkin Ladi, Plateau State, to head chef roles across Nigeria's hotels and restaurants — every dish carries that path." />
             <Button variant="outline" onClick={() => navigate("/chef")}>
               Meet The Chef
             </Button>
@@ -137,7 +137,7 @@ export function Home() {
         }}
       >
         <Flame size={28} strokeWidth={1.25} color="var(--morning-fog)" />
-        <SectionHeading kicker="Visit" title="Your Table Is Waiting" subtitle="Twelve seats. One counter. One fire. Reservations open six weeks out." />
+        <SectionHeading kicker="Visit" title="Your Table Is Waiting" subtitle="Reservations open six weeks out." />
         <Button size="lg" variant="accent" onClick={() => navigate("/reserve")}>
           Reserve Now
         </Button>

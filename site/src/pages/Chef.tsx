@@ -5,14 +5,14 @@ import { Badge } from "../components/core/Badge";
 import { Button } from "../components/core/Button";
 import { TiltCard } from "../components/content/TiltCard";
 
-const portraitAtmosphere = "radial-gradient(120% 100% at 35% 15%, #3a2c1c 0%, #1a1510 55%, #050505 100%)";
 const quoteAtmosphere = "radial-gradient(90% 100% at 50% 100%, rgba(174,196,220,0.06) 0%, rgba(5,5,5,0) 60%)";
 
-const milestones = [
-  { year: "2011", label: "Line Cook, Seoul" },
-  { year: "2015", label: "Sous Chef, Copenhagen" },
-  { year: "2018", label: "Head Chef, New York" },
-  { year: "2014", label: "Jang's Taste Sensation Opens" },
+const career = [
+  { role: "Head Chef", place: "City Birds Group of Company, NAF Valley, Asokoro, Abuja" },
+  { role: "Head Chef", place: "Enayi Hotels & Suites, Zarmaganda, Rayfield, Plateau State" },
+  { role: "Sous Chef", place: "Swiss Luxury Executive Hotel" },
+  { role: "General Manager / Head Chef", place: "Bima Restaurant, Gombe" },
+  { role: "Assistant Head Chef", place: "JW Cuisine" },
 ];
 
 export function Chef() {
@@ -32,7 +32,8 @@ export function Chef() {
         }}
       >
         <TiltCard>
-          <div style={{ aspectRatio: "4 / 5", background: portraitAtmosphere, position: "relative" }}>
+          <div style={{ aspectRatio: "4 / 5", position: "relative" }}>
+            <img src="/images/chef-jang.jpg" alt="Chef Jang Victor Chundusu" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 20%" }} />
             <div style={{ position: "absolute", inset: 0, background: "var(--scrim-bottom)" }} />
             <div style={{ position: "absolute", bottom: 20, left: 20 }}>
               <Badge tone="fog">Chef &amp; Owner</Badge>
@@ -43,13 +44,14 @@ export function Chef() {
           <SectionHeading
             align="left"
             kicker="The Chef"
-            title="Chef Jang"
-            subtitle="Trained on open flame before anything else. No shortcuts, no plating tricks — one fire, one counter, twelve seats a night."
+            title="Jang Victor Chundusu"
+            subtitle="Born in Barkin Ladi, Plateau State. Trained in catering at J.W.'s Cuisine, Rayfield, Jos — and shaped since by kitchens across Nigeria, from hotel lines to head chef."
           />
           <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
-            <Badge tone="neutral">15 Years</Badge>
-            <Badge tone="neutral">Wood Fire</Badge>
-            <Badge tone="neutral">Twelve Seats</Badge>
+            <Badge tone="neutral">Plateau State, Nigeria</Badge>
+            <Badge tone="neutral">God-Fearing</Badge>
+            <Badge tone="neutral">Creative</Badge>
+            <Badge tone="neutral">Hardworking</Badge>
           </div>
         </div>
       </section>
@@ -67,22 +69,22 @@ export function Chef() {
               color: "var(--text-primary)",
             }}
           >
-            Fire doesn't lie. It shows you exactly what the ingredient is.
+            Integrity. Commitment. Determination. Dedication.
           </p>
           <span style={{ fontSize: 11, letterSpacing: "0.28em", textTransform: "uppercase", color: "var(--text-tertiary)" }}>— Chef Jang</span>
         </div>
       </section>
 
       <section style={{ maxWidth: "var(--container-max)", margin: "0 auto", padding: "var(--space-9) var(--gutter)" }}>
-        <SectionHeading kicker="Journey" title="Twelve Years On Fire" />
+        <SectionHeading kicker="Career" title="Kitchens Along The Way" />
         <div style={{ display: "flex", flexDirection: "column", gap: 0, marginTop: 48 }}>
-          {milestones.map((m, i) => (
-            <div key={m.label}>
-              <div style={{ display: "flex", alignItems: "baseline", gap: 32, padding: "22px 0" }}>
-                <span style={{ fontSize: 13, letterSpacing: "0.18em", color: "var(--text-accent)", minWidth: 56 }}>{m.year}</span>
-                <span style={{ fontSize: 16, fontWeight: "var(--weight-light)", color: "var(--text-primary)", letterSpacing: "0.02em" }}>{m.label}</span>
+          {career.map((c, i) => (
+            <div key={c.place}>
+              <div style={{ display: "flex", flexWrap: "wrap", alignItems: "baseline", gap: 8, padding: "22px 0" }}>
+                <span style={{ fontSize: 13, letterSpacing: "0.12em", color: "var(--text-accent)", textTransform: "uppercase", minWidth: 220 }}>{c.role}</span>
+                <span style={{ fontSize: 16, fontWeight: "var(--weight-light)", color: "var(--text-primary)", letterSpacing: "0.02em" }}>{c.place}</span>
               </div>
-              {i < milestones.length - 1 && <Divider />}
+              {i < career.length - 1 && <Divider />}
             </div>
           ))}
         </div>

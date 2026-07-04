@@ -1,101 +1,114 @@
+export type Category = "Intercontinental" | "African" | "Snacks" | "Smoothies" | "Side Dishes" | "Soups & Sauces" | "Salads" | "Pasta";
+
 export interface Dish {
   name: string;
-  description: string;
-  price: string;
+  description?: string;
+  price?: string;
   atmosphere: "warm" | "cool" | "smoke";
   badge?: string;
-  category: "Small Plates" | "Fire" | "Mains" | "Dessert";
+  category: Category;
+}
+
+const atmospheres: Dish["atmosphere"][] = ["warm", "cool", "smoke"];
+
+function build(category: Category, names: string[], signature: string[] = []): Dish[] {
+  return names.map((name, i) => ({
+    name,
+    category,
+    atmosphere: atmospheres[i % atmospheres.length],
+    badge: signature.includes(name) ? "Signature" : undefined,
+  }));
 }
 
 export const dishes: Dish[] = [
-  {
-    name: "Charred Octopus",
-    description: "gochujang glaze, smoked leek, sesame ash",
-    price: "24",
-    atmosphere: "smoke",
-    badge: "Signature",
-    category: "Small Plates",
-  },
-  {
-    name: "Ember Scallop",
-    description: "brown butter, yuzu, charred citrus",
-    price: "22",
-    atmosphere: "warm",
-    category: "Small Plates",
-  },
-  {
-    name: "Smoked Egg",
-    description: "soy cured yolk, chili oil, rice cracker",
-    price: "14",
-    atmosphere: "smoke",
-    category: "Small Plates",
-  },
-  {
-    name: "Fire Short Rib",
-    description: "forty-eight hour braise, black garlic, ash salt",
-    price: "48",
-    atmosphere: "warm",
-    badge: "Signature",
-    category: "Fire",
-  },
-  {
-    name: "Whole Branzino",
-    description: "open flame, calamansi, herb oil",
-    price: "42",
-    atmosphere: "cool",
-    category: "Fire",
-  },
-  {
-    name: "Lava Rock Wagyu",
-    description: "table-side sear, ponzu, scallion",
-    price: "68",
-    atmosphere: "warm",
-    badge: "For Two",
-    category: "Fire",
-  },
-  {
-    name: "Jang's Bibim",
-    description: "twelve-hour rice, seasonal root, fire chili",
-    price: "32",
-    atmosphere: "warm",
-    category: "Mains",
-  },
-  {
-    name: "Charcoal Noodle",
-    description: "smoked broth, soft egg, pressed nori",
-    price: "28",
-    atmosphere: "smoke",
-    category: "Mains",
-  },
-  {
-    name: "Ash Roasted Duck",
-    description: "black vinegar, burnt orange, scallion oil",
-    price: "44",
-    atmosphere: "warm",
-    category: "Mains",
-  },
-  {
-    name: "Smoked Miso Custard",
-    description: "burnt honey, sesame brittle",
-    price: "16",
-    atmosphere: "cool",
-    category: "Dessert",
-  },
-  {
-    name: "Charred Pear",
-    description: "brown butter caramel, toasted grain ice",
-    price: "17",
-    atmosphere: "warm",
-    category: "Dessert",
-  },
-  {
-    name: "Ember Chocolate",
-    description: "smoked cacao, sea salt, olive oil",
-    price: "18",
-    atmosphere: "smoke",
-    badge: "Signature",
-    category: "Dessert",
-  },
+  ...build(
+    "Intercontinental",
+    [
+      "Baked Potato With Veg",
+      "Baked Potato & Fish",
+      "Oriental Fried Rice And Seafood",
+      "Oriental Fried Rice",
+      "Fried Rice",
+      "Coconut Fried Rice",
+      "Beef Fried Rice",
+      "Chinese Fried Rice",
+      "Chinese Fried Rice & Seafoods",
+      "Egg Fried Rice & Chicken Soup",
+      "Chicken Fried Rice",
+      "Basil Fried Rice",
+      "Chicken & Shrimp Mixed Rice",
+      "Crunchy Noodles",
+      "Steamed Rice & Thai Sauce",
+      "Pineapple Rice",
+      "Sweet Potato & Carrots Nest",
+      "Jambalaya Rice",
+      "Mashed Potato And Grilled Chicken",
+      "Grilled Shrimp And Spicy Mango Lime Coulis",
+      "Singapore Noodles",
+      "Butter Chicken",
+      "Indonesian Nasi Goreng",
+      "Thai Basil Fried Rice",
+    ],
+    ["Singapore Noodles", "Butter Chicken"]
+  ),
+  ...build("African", [
+    "Jollof Rice",
+    "Moi Moi",
+    "Gizzard & Dodo",
+    "Yam Porridge With Fish & Shrimps",
+    "Beans & Dodo",
+    "Beans Porridge",
+    "Boiled Yam & Egg Sauce",
+    "Chips & Egg",
+    "Asun",
+    "White Rice & Stew",
+    "Noodles & Egg",
+    "White Rice, Beans & Stew",
+    "Potato Casserole",
+  ]),
+  ...build("Snacks", [
+    "Shawarma",
+    "Beef Burger",
+    "Chicken Burger",
+    "Sandwich",
+    "Meat Pie",
+    "Doughnut",
+    "Corn Dog",
+    "Samosa / Spring Roll",
+    "Vegetarian Pizza",
+    "Chicken Italia Pizza",
+    "Pepperoni Pizza",
+    "Savoury Beef Pizza",
+  ]),
+  ...build("Smoothies", ["Avocado Smoothie", "Mango Lassi"]),
+  ...build("Side Dishes", ["Crispy Chicken Wings", "Plantain Cup", "Honey Glazed Wings"]),
+  ...build(
+    "Soups & Sauces",
+    [
+      "Mushroom Cream Soup",
+      "Shredded Chicken Sauce",
+      "Shredded Beef Sauce",
+      "Chef Jang Special (Potato & Chicken)",
+      "Chicken Cream Soup",
+      "Catfish Pepper Soup",
+      "Goat Meat Pepper Soup",
+      "Chicken Pepper Soup",
+      "Hot & Spicy Sauce",
+      "Sweet & Sour Sauce",
+    ],
+    ["Chef Jang Special (Potato & Chicken)"]
+  ),
+  ...build("Salads", [
+    "Chicken Salad",
+    "Avocado Salad",
+    "Coleslaw",
+    "Green Salad",
+    "American Sweet Corn Salad",
+    "Caesar Salad",
+    "Garden Salad",
+    "Stir Fried Veggies",
+  ]),
+  ...build("Pasta", ["Alfredo Linguine", "Penne Arrabbiata", "Spaghetti Bolognaise", "Special Spaghetti", "Creamy Pasta"]),
 ];
 
-export const categories: Dish["category"][] = ["Small Plates", "Fire", "Mains", "Dessert"];
+export const categories: Category[] = ["Intercontinental", "African", "Snacks", "Side Dishes", "Soups & Sauces", "Salads", "Pasta", "Smoothies"];

@@ -61,7 +61,7 @@ export function Reserve() {
   return (
     <div>
       <section style={{ padding: "var(--space-9) var(--gutter) var(--space-7)", textAlign: "center" }}>
-        <SectionHeading kicker="Visit" title="Reserve Your Table" subtitle="Twelve seats. One counter. One fire. Reservations open six weeks out." />
+        <SectionHeading kicker="Visit" title="Reserve Your Table" subtitle="Reservations open six weeks out." />
       </section>
 
       <section style={{ maxWidth: 640, margin: "0 auto", padding: "0 var(--gutter) var(--space-9)" }}>

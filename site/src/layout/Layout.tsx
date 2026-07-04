@@ -34,7 +34,7 @@ export function Layout() {
         <Outlet />
       </main>
       <Footer
-        note="Twelve seats. One counter. One fire."
+        note="African and intercontinental dishes, from Chef Jang's kitchen."
         columns={[
           { title: "Visit", links: ["Menu", "Reserve", "Private Dining"] },
           { title: "Contact", links: ["Email", "Instagram"] },
